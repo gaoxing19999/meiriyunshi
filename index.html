@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>每日运势</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="content">
+        <header>
+            <h1>每日运势</h1>
+            <div class="header-decor">
+                <div class="stars"></div>
+                <div class="moon"></div>
+            </div>
+        </header>
+        
+        <div class="container">
+            <div class="user-info-form">
+                <h2>请输入您的信息</h2>
+                <form id="user-form">
+                    <div class="form-group">
+                        <label for="name">姓名：</label>
+                        <input type="text" id="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label>性别：</label>
+                        <div class="gender-options">
+                            <label>
+                                <input type="radio" name="gender" value="male" required>
+                                男
+                            </label>
+                            <label>
+                                <input type="radio" name="gender" value="female" required>
+                                女
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="birthday">出生日期：</label>
+                        <div class="date-picker-container">
+                            <input type="date" id="birthday" required 
+                                   min="1900-01-01" max="2100-12-31"
+                                   value="1990-01-01">
+                            <div class="date-display">
+                                <span id="lunar-date">农历：一九九〇年正月初一</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>运势类别：</label>
+                        <div class="fortune-types">
+                            <label>
+                                <input type="radio" name="fortune-type" value="overall" checked>
+                                综合运势
+                            </label>
+                            <label>
+                                <input type="radio" name="fortune-type" value="love">
+                                爱情运势
+                            </label>
+                            <label>
+                                <input type="radio" name="fortune-type" value="career">
+                                事业运势
+                            </label>
+                            <label>
+                                <input type="radio" name="fortune-type" value="health">
+                                健康运势
+                            </label>
+                        </div>
+                        <button type="submit" class="start-btn">开始测算</button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="payment-form" style="display: none;">
+                <h2>免费查看今日运势</h2>
+                <p class="promo-text">限时免费3天活动</p>
+                <button id="pay-btn">立即查看</button>
+            </div>
+
+            <div class="loading-spinner" style="display: none;">
+                <div class="spinner"></div>
+                <p>正在生成您的运势...</p>
+            </div>
+
+            <div class="quote-box" style="display: none;">
+                <div id="quote-text"></div>
+      <div class="button-group">
+        <button id="back-btn">返回主页</button>
+        <button id="new-quote-btn">获取新运势</button>
+      </div>
+      
+      <div class="social-sharing">
+        <button id="wechat-share">微信分享</button>
+        <button id="weibo-share">微博分享</button>
+      </div>
+      
+      <div class="feedback-container">
+        <h3>反馈意见</h3>
+        <textarea id="feedback-text" placeholder="请输入您的宝贵意见"></textarea>
+        <button id="submit-feedback">提交反馈</button>
+      </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
